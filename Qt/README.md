@@ -6,5 +6,5 @@
 ```sudo apt install qt5-default qtcreator```
 
 - QML Examples 
-```sudo apt install qml-module-qtquick-controls qtdeclarative5-dev```
+```sudo apt install qml-module-qtquick-controls2 qtquickcontrols2* qtdeclarative5-dev```
 
