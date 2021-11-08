@@ -35,7 +35,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = dec2led1.0.0
-DISTDIR = /home/pi/2018_19/FSST-3AHEL/dec2led/.tmp/dec2led1.0.0
+DISTDIR = /home/pi/raspberry-workshop-2021/Qt/dec2led/.tmp/dec2led1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1
 LIBS          = $(SUBLIBS) -lwiringPi -lQt5Widgets -lQt5Gui -lQt5Core -lGLESv2 -lpthread -latomic 
@@ -115,6 +115,7 @@ DIST          = /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/default_pre.prf \
@@ -206,6 +207,7 @@ Makefile: dec2led.pro /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++/qmake.c
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/default_pre.prf \
@@ -289,6 +291,7 @@ Makefile: dec2led.pro /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++/qmake.c
 /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/default_pre.prf:
@@ -367,7 +370,7 @@ moc_dec2led.cpp: ui_dec2led.h \
 		dec2led.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/2018_19/FSST-3AHEL/dec2led/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/2018_19/FSST-3AHEL/dec2led -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -I/usr/include/c++/8 -I/usr/include/arm-linux-gnueabihf/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/arm-linux-gnueabihf/8/include -I/usr/local/include -I/usr/lib/gcc/arm-linux-gnueabihf/8/include-fixed -I/usr/include/arm-linux-gnueabihf -I/usr/include dec2led.h -o moc_dec2led.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/raspberry-workshop-2021/Qt/dec2led/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/raspberry-workshop-2021/Qt/dec2led -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -I/usr/include/c++/8 -I/usr/include/arm-linux-gnueabihf/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/arm-linux-gnueabihf/8/include -I/usr/local/include -I/usr/lib/gcc/arm-linux-gnueabihf/8/include-fixed -I/usr/include/arm-linux-gnueabihf -I/usr/include dec2led.h -o moc_dec2led.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:

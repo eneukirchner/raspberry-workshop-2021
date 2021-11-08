@@ -1,32 +1,23 @@
-/* hallo.c 
-   turns franzboard LEDs sequentially on and off
-*/ 
+// Blink with lgpio
+// build: gcc blink.c -o blink -Wall -llgpio
 #include <stdio.h>
-#include <wiringPi.h>
+#include <lgpio.h>
+#define OUT 18
 
-#define	LED1 18	
-#define	LED2 23
-#define	LED3 24 	
-#define	LED4 25 	
-
-int main (void)
+int main(int argc, char *argv[])
 {
-  int leds[4] = {LED1, LED2, LED3, LED4};
-  int i;
-  printf ("Raspberry Pi blink\n") ;
+    int h;
+    int lFlags = 0; /* default line flags */
 
-  wiringPiSetupGpio() ;
-  for (i = 0; i < 4; i++)
-  	pinMode (leds[i], OUTPUT);
+    /* get a handle to the GPIO */
+    h = lgGpiochipOpen(0);
+    lgGpioClaimOutput(h, lFlags, OUT, 0); /* initial level 0 */
 
-  for (i = 0;; i++)
-  {
-    if (i == 4)
-	i = 0;
-    digitalWrite (leds[i], HIGH);
-    delay (500) ;		// mS
-    digitalWrite (leds[i], LOW);
-    delay (500) ;
-  }
-  return 0 ;
+    while (1)
+    {
+        lgGpioWrite(h, OUT, 1);
+        lguSleep(0.5); /* sleep for 0.1 seconds */
+        lgGpioWrite(h, OUT, 0);
+        lguSleep(0.5); /* sleep for 0.1 seconds */
+    }
 }

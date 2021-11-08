@@ -35,7 +35,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = QmlSkeleton1.0.0
-DISTDIR = /home/pi/fachtagungs-workshop/Qt/QmlSkeleton/.tmp/QmlSkeleton1.0.0
+DISTDIR = /home/pi/raspberry-workshop-2021/Qt/Basics/QmlSkeleton/.tmp/QmlSkeleton1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1
 LIBS          = $(SUBLIBS) -lQt5Quick -lQt5Gui -lQt5Qml -lQt5Network -lQt5Core -lGLESv2 -lpthread -latomic 
@@ -117,6 +117,7 @@ DIST          = /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/default_pre.prf \
@@ -207,6 +208,7 @@ Makefile: QmlSkeleton.pro /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++/qma
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/default_pre.prf \
@@ -292,6 +294,7 @@ Makefile: QmlSkeleton.pro /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++/qma
 /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/default_pre.prf:
@@ -377,7 +380,7 @@ compiler_moc_header_clean:
 moc_qmlskeleton.cpp: qmlskeleton.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/fachtagungs-workshop/Qt/QmlSkeleton/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/fachtagungs-workshop/Qt/QmlSkeleton -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtQuick -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtQml -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -I/usr/include/c++/8 -I/usr/include/arm-linux-gnueabihf/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/arm-linux-gnueabihf/8/include -I/usr/local/include -I/usr/lib/gcc/arm-linux-gnueabihf/8/include-fixed -I/usr/include/arm-linux-gnueabihf -I/usr/include qmlskeleton.h -o moc_qmlskeleton.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/raspberry-workshop-2021/Qt/Basics/QmlSkeleton/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/raspberry-workshop-2021/Qt/Basics/QmlSkeleton -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtQuick -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtQml -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -I/usr/include/c++/8 -I/usr/include/arm-linux-gnueabihf/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/arm-linux-gnueabihf/8/include -I/usr/local/include -I/usr/lib/gcc/arm-linux-gnueabihf/8/include-fixed -I/usr/include/arm-linux-gnueabihf -I/usr/include qmlskeleton.h -o moc_qmlskeleton.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
