@@ -1,7 +1,7 @@
 # Program examples and utilities for Raspberry Pi 
 
 ## Programming 
-(_directories: c, Qt, Python_)
+(_directories: Python, Qt, c, curses-games_)
 
 For compiling / running the code examples, the following software packages are needed - most of them
 are part of _Raspberry Pi OS bullseye_ distribution and can be installed with ```sudo apt install <package name>```.
@@ -14,6 +14,9 @@ are part of _Raspberry Pi OS bullseye_ distribution and can be installed with ``
 
 - PyQt:
 ```python3-pyqt5*  pyqt5-dev-tools```
+
+- curses:
+```ncurses-dev```
 
 There is one important exception: _wiringPi_, which was used for all examples for controlling GPIO so far, is no longer
 available in the latest Raspberry OS release. As a replacement, I have decided to use _lgpio_, because of mainly two
