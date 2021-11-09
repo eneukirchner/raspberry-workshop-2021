@@ -20,7 +20,7 @@ are part of _Raspberry Pi OS bullseye_ distribution and can be installed with ``
 
 There is one important exception: _wiringPi_, which was used for all examples for controlling GPIO so far, is no longer
 available in the latest Raspberry OS release. As a replacement, I have decided to use _lgpio_, because of mainly two
-strong points: (1) It uses the new _gpiochip_ kernel interface interface and (2) it does not require ```sudo``` for
+strong points: (1) It uses the new _gpiochip_ kernel interface and (2) it does not require ```sudo``` for
 running the compiled programs. Unfortunately, it is not (yet) part of the distribution. You have to build and install
 it from source <http://abyz.me.uk/lg/download.html>.
 
