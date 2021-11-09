@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
+# this skript can be used to control / monitor a Raspberry Pi with expansion hat 
+# via apps like e.g. MQTT Dash
+
 import paho.mqtt.client as mqtt
 from gpiozero import LEDBoard, ButtonBoard
 from time import sleep
 
 BROKER = "test.mosquitto.org"
-TOPIC = "meinraspi/edgar/"
+TOPIC = "myraspi/linuxlab/"
 LEDS = LEDBoard(18, 23, 24, 25)
 BUTTONS = ButtonBoard(22, 27, 17)
 connected = False
