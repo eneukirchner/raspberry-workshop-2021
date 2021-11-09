@@ -6,13 +6,13 @@
 For compiling / running the code examples, the following software packages are needed - most of them
 are part of _Raspberry Pi OS bullseye_ distribution and can be installed with ```sudo apt install <package name>```.
 
-- Qt Widget 
+- Qt Widget:
 ```qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools qtcreator```
 
-- QML  
+- QML: 
 ```qml-module-qtquick-controls2 qtquickcontrols2* qtdeclarative5-dev```
 
-- PyQt
+- PyQt:
 ```python3-pyqt5*  pyqt5-dev-tools```
 
 There is one important exception: _wiringPi_, which was used for all examples for controlling GPIO so far, is no longer
