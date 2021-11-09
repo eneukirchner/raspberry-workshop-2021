@@ -32,5 +32,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     qmlskeleton.h
 
-CONFIG += qmltypes
 
