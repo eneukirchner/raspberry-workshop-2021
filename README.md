@@ -10,7 +10,7 @@ are part of _Raspberry Pi OS bullseye_ distribution and can be installed with ``
 ```qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools qtcreator```
 
 - QML: 
-```qml-module-qtquick-controls2 qtquickcontrols2* qtdeclarative5-dev```
+```qml-module-qtquick-* qtquickcontrols2* qtdeclarative5-dev```
 
 - PyQt:
 ```python3-pyqt5*  pyqt5-dev-tools python3-paho-mqtt```
