@@ -1,6 +1,7 @@
 # Program examples and utilities for Raspberry Pi 
 
-## Programming (Directories c, Qt, Python)
+## Programming 
+(_directories c, Qt, Python_)
 
 For compiling / running the code examples, the following software packages are needed - most of them
 are part of Raspberry Pi OS bullseye distribution and can be installed with ```sudo apt install <package name>```.
@@ -14,7 +15,15 @@ are part of Raspberry Pi OS bullseye distribution and can be installed with ```s
 - PyQt
 ```python3-pyqt5*  pyqt5-dev-tools```
 
-## BULME Hat hardware (Directory hardware)
+There is one important exception: _wiringPi_, which was used for all examples for controlling GPIO so far, is no longer
+available in the latest Raspberry OS release. As a replacement, I have decided to use _lgpio_, because of mainly two
+strong points: (1) It uses the new _gpiochip_ kernel interface interface and (2) it does not require ```sudo``` for
+running the compiled programs. Unfortunately, it is not (yet) part of the distribution. You have to build and install
+it from source <http://abyz.me.uk/lg/download.html>.
+
+
+## BULME Hat hardware
+(_directory hardware_)
 
 ![Board](board.jpg)
 
@@ -25,7 +34,8 @@ Board Dimensions: 65 x 56 mm
 *Important Notice:* Unless otherwise specified,  Eagle Files
 use  layer 21 and 25 for silkscreen
 
-## Shell scripts etc. for Raspberry Pi setup (Directory tools)
+## Shell scripts etc. for Raspberry Pi setup
+(_directory tools_)
 
 - find-raspi.php
 Run this in a webserver to find ip address of Raspberry in subnet (if zeroconf is unavailable)
