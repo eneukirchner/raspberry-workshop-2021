@@ -1,6 +1,5 @@
 #include "dec2led.h"
 #include <QVector>
-#include <wiringPi.h>
 #include <lgpio.h>
 #include <QDebug>
 
