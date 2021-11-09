@@ -13,7 +13,7 @@ are part of _Raspberry Pi OS bullseye_ distribution and can be installed with ``
 ```qml-module-qtquick-controls2 qtquickcontrols2* qtdeclarative5-dev```
 
 - PyQt:
-```python3-pyqt5*  pyqt5-dev-tools```
+```python3-pyqt5*  pyqt5-dev-tools python3-paho-mqtt```
 
 - curses:
 ```ncurses-dev```
