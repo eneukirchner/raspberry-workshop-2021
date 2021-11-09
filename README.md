@@ -1,16 +1,16 @@
 # Program examples and utilities for Raspberry Pi 
 
 ## Programming 
-(_directories c, Qt, Python_)
+(_directories: c, Qt, Python_)
 
 For compiling / running the code examples, the following software packages are needed - most of them
-are part of Raspberry Pi OS bullseye distribution and can be installed with ```sudo apt install <package name>```.
+are part of _Raspberry Pi OS bullseye_ distribution and can be installed with ```sudo apt install <package name>```.
 
 - Qt Widget 
 ```qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools qtcreator```
 
 - QML  
-```sudo apt install qml-module-qtquick-controls2 qtquickcontrols2* qtdeclarative5-dev```
+```qml-module-qtquick-controls2 qtquickcontrols2* qtdeclarative5-dev```
 
 - PyQt
 ```python3-pyqt5*  pyqt5-dev-tools```
@@ -23,7 +23,7 @@ it from source <http://abyz.me.uk/lg/download.html>.
 
 
 ## BULME Hat hardware
-(_directory hardware_)
+(_directory: hardware_)
 
 ![Board](board.jpg)
 
@@ -35,7 +35,7 @@ Board Dimensions: 65 x 56 mm
 use  layer 21 and 25 for silkscreen
 
 ## Shell scripts etc. for Raspberry Pi setup
-(_directory tools_)
+(_directory: tools_)
 
 - find-raspi.php
 Run this in a webserver to find ip address of Raspberry in subnet (if zeroconf is unavailable)
