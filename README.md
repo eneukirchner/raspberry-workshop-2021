@@ -34,8 +34,8 @@ Board Dimensions: 65 x 56 mm
 
 (TOP) *Name-Layer and Value Layer*  -> *Silkscreen*
 
-*Important Notice:* Unless otherwise specified,  Eagle Files
-use  layer 21 and 25 for silkscreen
+*Important Notice:* Unless otherwise specified, Eagle files
+use layer 21 and 25 for silkscreen
 
 ## Shell scripts etc. for Raspberry Pi setup
 (_directory: tools_)
