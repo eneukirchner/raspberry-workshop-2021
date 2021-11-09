@@ -4,10 +4,10 @@
 #include "ui_dec2led.h"
 
 // GPIO Pins BULME Hat
-// const QVector<int> LEDS = {18, 23, 24, 25};
+const QVector<int> LEDS = {18, 23, 24, 25};
 
 // GPIO Pins MakerPhat
-const QVector<int> LEDS = {17, 18, 27, 22};
+// const QVector<int> LEDS = {17, 18, 27, 22};
 
 class Dec2Led : public QWidget, private Ui::Dec2Led
 {
