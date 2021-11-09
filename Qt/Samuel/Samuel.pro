@@ -34,7 +34,7 @@ HEADERS += \
 FORMS += \
         samuel.ui
 
-LIBS += -lwiringPi
+LIBS += -llgpio
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

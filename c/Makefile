@@ -1,10 +1,10 @@
 all:	binary-die blink led0-blink-sysfs morse
 
 binary-die:	binary-die.c
-	gcc binary-die.c -o binary-die -lwiringPi -Wall
+	gcc binary-die.c -o binary-die -llgpio -Wall
 
 blink:	blink.c
-	gcc blink.c -o blink -lwiringPi -Wall
+	gcc blink.c -o blink -llgpio -Wall
 
 led0-blink-sysfs: led0-blink-sysfs.c
 	gcc led0-blink-sysfs.c -o led0-blink-sysfs -Wall

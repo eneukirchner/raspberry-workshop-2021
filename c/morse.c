@@ -1,5 +1,6 @@
 // morse 
 // steuert GPIO LED0 via sysfs zum Senden von Morsezeichen
+// Aufruf sudo ./morse
 
 #include <time.h>
 #include <stdio.h>

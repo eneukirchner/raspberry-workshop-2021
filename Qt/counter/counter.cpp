@@ -11,13 +11,13 @@ Counter::Counter(QWidget *parent) :
     m_reset = new Gpio(BUTTON2, INPUT);
     m_down = new Gpio(BUTTON3, INPUT);
 
-    m_up->setTrigger(INT_EDGE_FALLING); // arm trigger for GPIO state
-    m_reset->setTrigger(INT_EDGE_FALLING);
-    m_down->setTrigger(INT_EDGE_FALLING);
+    m_up->setTrigger(EDGE_FALLING); // arm trigger for GPIO state
+    m_reset->setTrigger(EDGE_FALLING);
+    m_down->setTrigger(EDGE_FALLING);
 
-    connect(m_up, SIGNAL(stateChanged()), this, SLOT(on_pushButtonDown_clicked())); // connect hardware buttons to GUI
-    connect(m_reset, SIGNAL(stateChanged()), this, SLOT(on_pushButtonReset_clicked()));
-    connect(m_down, SIGNAL(stateChanged()), this, SLOT(on_pushButtonUp_clicked()));
+    connect(m_up, &Gpio::stateChanged, this, &Counter::on_pushButtonDown_clicked); // connect hardware buttons to GUI
+    connect(m_reset, &Gpio::stateChanged, this, &Counter::on_pushButtonReset_clicked);
+    connect(m_down, &Gpio::stateChanged, this, &Counter::on_pushButtonUp_clicked);
 }
 
 Counter::~Counter()

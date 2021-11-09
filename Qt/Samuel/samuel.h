@@ -1,10 +1,14 @@
 #ifndef SAMUEL_H
 #define SAMUEL_H
 
+const int TDOT = 200; // ms
+const int LED = 18; // GPIO LED pin for your board
+
 #include <QMap>
 #include <QString>
 #include "ui_samuel.h"
 
+// might be expanded to alphabet a...z
 const QMap<QChar, QString> MORSECODE = {
     {'0', "-----"},
     {'1', ".----"},
@@ -18,8 +22,6 @@ const QMap<QChar, QString> MORSECODE = {
     {'9', "----."}
 };
 
-const int TDOT = 100; // ms
-const int LED = 26; // GPIO pin
 
 class Samuel : public QMainWindow, private Ui::Samuel
 {
@@ -30,11 +32,11 @@ public:
 private:       
     void morseBlink(const QString& message, int tdot);
     void mdelay(int millisecondsWait);
+    int m_gpio_handle;
 
 private slots:
     void on_sendButton_clicked();
     void on_actionAbout_triggered();
-    void on_pushButton_clicked();
 };
 
 #endif // SAMUEL_H

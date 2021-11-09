@@ -1,8 +1,11 @@
 #ifndef GPIO_H
 #define GPIO_H
-#include <wiringPi.h>
+#include <lgpio.h>
 #include <QObject>
 #include <QTimer>
+
+enum {INPUT, OUTPUT};
+enum {EDGE_FALLING, EDGE_RISING, EDGE_BOTH};
 
 class Gpio : public QObject
 {
@@ -17,6 +20,7 @@ public:
     static void setup();
 
 private:
+    static int m_gpio_handle;
     int m_pin;
     int m_pinstate;
     int m_edge;

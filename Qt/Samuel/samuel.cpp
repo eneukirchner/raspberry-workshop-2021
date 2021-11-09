@@ -1,5 +1,5 @@
 #include "samuel.h"
-#include <wiringPi.h>
+#include <lgpio.h>
 #include <QDebug>
 #include <QTimer>
 #include <QEventLoop>
@@ -9,9 +9,12 @@ Samuel::Samuel(QWidget *parent) :
     QMainWindow(parent)
 {
     setupUi(this);
-    wiringPiSetupGpio();
-    pinMode(LED, OUTPUT);
-    digitalWrite(LED, 0);
+    m_gpio_handle = lgGpiochipOpen(0);
+    if (m_gpio_handle < 0) {
+        qDebug() << "Cannot open GPIO chip";
+        QApplication::quit();
+    }
+    lgGpioWrite(m_gpio_handle, LED, 0);
 }
 
 void Samuel::on_sendButton_clicked()
@@ -26,7 +29,7 @@ void Samuel::on_sendButton_clicked()
 void Samuel::morseBlink(const QString& message, int tdot)
 {
     for (auto symbol : message) {
-        digitalWrite(LED, 1);
+        lgGpioWrite(m_gpio_handle, LED, 1);
         if (symbol == "-") {
             mdelay(tdot * 3);
         }
@@ -34,7 +37,7 @@ void Samuel::morseBlink(const QString& message, int tdot)
             mdelay(tdot);
         }
 
-        digitalWrite(LED, 0);
+        lgGpioWrite(m_gpio_handle, LED, 0);
         mdelay(tdot);
     }
     mdelay(tdot * 2);
@@ -56,7 +59,4 @@ void Samuel::mdelay(int millisecondsWait)
     loop.exec();
 }
 
-void Samuel::on_pushButton_clicked()
-{
-    qDebug() << "Button clicked";
-}
+

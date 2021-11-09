@@ -6,7 +6,11 @@
 #include "ui_counter.h"
 #include "gpio.h"
 
-enum { BUTTON1 = 22, BUTTON2 = 27, BUTTON3 = 17 };
+// BULME hat:
+// enum {BUTTON1 = 22, BUTTON2 = 27, BUTTON3 = 17};
+
+// MakerPhat:
+enum {BUTTON1 = 21, BUTTON2 = 16, BUTTON3 = 20};
 
 class Counter : public QWidget, private Ui::Counter
 {

@@ -8,7 +8,9 @@
 #include <QTcpSocket>
 #include <QVector>
 
+// GPIO pins Bulme Hat
 const QVector<int> BUTTONS = {22, 27, 17};
+
 const int PORT = 9999;
 const int TIMEOUT = 1000;
 
@@ -23,6 +25,7 @@ public slots:
 
 private:
     QTcpServer* m_server;
+    int m_gpio_handle;
 };
 
 #endif // SENDER_H

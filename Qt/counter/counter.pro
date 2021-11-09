@@ -32,4 +32,4 @@ HEADERS  += counter.h \
 
 FORMS    += counter.ui
 
-LIBS += -lwiringPi
+LIBS += -llgpio

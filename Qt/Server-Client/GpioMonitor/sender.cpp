@@ -2,14 +2,21 @@
 
 #include "sender.h"
 #include <wiringPi.h>
+#include <lgpio.h>
 #include <QString>
 #include <QDebug>
+#include <QCoreApplication>
 
 Sender::Sender(QObject *parent) : QObject(parent)
 {
-    wiringPiSetupGpio();
+    m_gpio_handle = lgGpiochipOpen(0);
+    if (m_gpio_handle < 0) {
+        qDebug() << "could not open GPIO chip";
+        QCoreApplication::quit();
+    }
+
     for (auto pin : BUTTONS)
-        pinMode(pin, INPUT);
+        lgGpioClaimInput(m_gpio_handle, 0, pin);
 
     m_server = new QTcpServer(this);
     connect(m_server, &QTcpServer::newConnection, this, &Sender::sendStatus);
@@ -27,7 +34,7 @@ void Sender::sendStatus()
     uint n = 0;
     int value = 0;
     for (auto pin : BUTTONS)
-        value += (1 - digitalRead(pin)) << n++;
+        value += (1 - lgGpioRead(m_gpio_handle, pin)) << n++;
 
     qDebug() << "connect from" << socket->peerAddress().toString() << socket->peerPort();;
 

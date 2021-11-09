@@ -30,5 +30,5 @@ HEADERS  += dec2led.h
 
 FORMS    += dec2led.ui
 
-LIBS += -lwiringPi
+LIBS += -llgpio
 

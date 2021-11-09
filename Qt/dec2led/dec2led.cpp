@@ -1,17 +1,22 @@
 #include "dec2led.h"
 #include <QVector>
 #include <wiringPi.h>
+#include <lgpio.h>
+#include <QDebug>
 
 Dec2Led::Dec2Led(QWidget *parent) :
     QWidget(parent)
 {
     setupUi(this); // Setup graph. Oberflaeche
+    m_gpio_handle = lgGpiochipOpen(0);
+    if (m_gpio_handle < 0) {
+        qDebug() << "could not open GPIO chip";
+        QApplication::quit();
+    }
 
-    // Setup GPIO - Hardware:
-    wiringPiSetupGpio();
     // jedes Element des Vektors LEDS -> led
     for (auto &led : LEDS)
-        pinMode(led, OUTPUT);
+        lgGpioClaimOutput(m_gpio_handle, 0, led, 0);
 
 }
 
@@ -19,7 +24,7 @@ Dec2Led::~Dec2Led()
 {
     // LEDS der Reihe nach ausschalten
     for (auto &led : LEDS)
-        digitalWrite(led, LOW);
+        lgGpioWrite(m_gpio_handle, led, 0);
 }
 
 void Dec2Led::on_decimalValue_valueChanged(int value)
@@ -43,9 +48,8 @@ void Dec2Led::on_decimalValue_valueChanged(int value)
         else
             bit->setStyleSheet("background-color: black");
 
-        digitalWrite(LEDS[n++], level); // Ansteuerung Hardware
+        // Wert auf den LEDs ausgeben
+        // andere Moeglichkeit: lgGroupWrite
+        lgGpioWrite(m_gpio_handle, LEDS[n++], level);
     }
-
-
-
 }
