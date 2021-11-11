@@ -33,4 +33,6 @@
 
 # Qt
 *.user
+.qmake.stash
+
 
